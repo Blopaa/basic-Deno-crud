@@ -38,12 +38,13 @@ router.put('/:id', async (req: Request, res: Response) => {
 });
 
 router.delete('/:id', async (req: Request, res: Response) => {
-    const id = parseInt(req.params.id);
-    const users: User[] = await readUsers();
-    if(!users[id - 1]) return res.status(404).json({ message: 'User not found' });
-    users.splice(id - 1, 1);
-    await writeUsers(users);
-    res.json(users);
+  const id = parseInt(req.params.id);
+  const users: User[] = await readUsers();
+  if (!users[id - 1])
+    return res.status(404).json({ message: 'User not found' });
+  users.splice(id - 1, 1);
+  await writeUsers(users);
+  res.json(users);
 });
 
 export default router;
