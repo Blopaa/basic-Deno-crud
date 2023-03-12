@@ -1,0 +1,8 @@
+{
+    "imports": {
+        "express": "npm:express"
+    },
+    "tasks": {
+        "start": "deno run -A src/app.ts"
+    }
+}
